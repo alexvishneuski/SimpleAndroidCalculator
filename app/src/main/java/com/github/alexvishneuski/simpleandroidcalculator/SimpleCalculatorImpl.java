@@ -3,6 +3,7 @@ package com.github.alexvishneuski.simpleandroidcalculator;
 import java.math.BigDecimal;
 
 public class SimpleCalculatorImpl implements ICalculator {
+    //TO DO another methods
     @Override
     public BigDecimal add(BigDecimal one, BigDecimal two) {
         return one.add(two);
