@@ -1,2 +1,2 @@
 # SimpleAndroidCalculator
-Simple Android calculator supports one of five operations
+Simple Android calculator supports one of four operations
