@@ -3,8 +3,6 @@ package com.github.alexvishneuski.simpleandroidcalculator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,6 +47,9 @@ public class CalculatorActivity extends AppCompatActivity {
         mDifButton = findViewById(R.id.dif_button);
         mMultiplyButton = findViewById(R.id.multiply_button);
         mDevideButton = findViewById(R.id.devide_button);
+
+        mResultTextView = (TextView) findViewById(R.id.result_text_view);
+
 /*
         mInputOneEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -105,43 +106,39 @@ public class CalculatorActivity extends AppCompatActivity {
         });
 */
 
-        mAddButton = findViewById(R.id.add_button);
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.add(Float.valueOf(mInputOneEditText.getText().toString()), Float.valueOf(mInputTwoEditText.getText().toString())));
+                String result = Float.toString(mCalculator.add(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
 
-        mDifButton = findViewById(R.id.add_button);
         mDifButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.dif(Float.valueOf(mInputOneEditText.getText().toString()), Float.valueOf(mInputTwoEditText.getText().toString())));
+                String result = Float.toString(mCalculator.dif(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
 
-        mMultiplyButton = findViewById(R.id.add_button);
         mMultiplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.multiply(Float.valueOf(mInputOneEditText.getText().toString()), Float.valueOf(mInputTwoEditText.getText().toString())));
+                String result = Float.toString(mCalculator.multiply(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
 
-        mDevideButton = findViewById(R.id.add_button);
         mDevideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.divide(Float.valueOf(mInputOneEditText.getText().toString()), Float.valueOf(mInputTwoEditText.getText().toString())));
+                String result = Float.toString(mCalculator.divide(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
 
-        mResultTextView = (TextView) findViewById(R.id.result_text_view);
+
     }
 
     private void showResult(String result) {
