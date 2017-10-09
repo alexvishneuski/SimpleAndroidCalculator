@@ -76,7 +76,7 @@
         android:layout_marginRight="5pt"
         android:textSize="12pt"
         android:layout_marginTop="3pt"
-        android:id="@+id/tvResult"
+        android:id="@+id/result_text_view"
         android:gravity="center_horizontal">
     </TextView>
 
