@@ -18,7 +18,8 @@ public class SimpleCalculatorImpl implements ICalculator {
 
     @Override
     public float divide(float one, float two) {
-        if (two == 0) return 0;
+        //if (two == 0) return 0;
+        if (two==0) throw new RuntimeException("devided on zero");
         return one / two;
     }
 }
