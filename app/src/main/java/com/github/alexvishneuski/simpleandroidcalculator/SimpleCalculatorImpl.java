@@ -2,24 +2,29 @@ package com.github.alexvishneuski.simpleandroidcalculator;
 
 public class SimpleCalculatorImpl implements ICalculator {
     @Override
-    public float add(float one, float two) {
-        return one + two;
+    public int add(int pOne, int pTwo) {
+        return pOne + pTwo;
     }
 
     @Override
-    public float dif(float one, float two) {
-        return one - two;
+    public int dif(int pOne, int pTwo) {
+        return pOne - pTwo;
     }
 
     @Override
-    public float multiply(float one, float two) {
-        return one * two;
+    public int multiply(int pOne, int pTwo) {
+        return pOne * pTwo;
     }
 
     @Override
-    public float divide(float one, float two) {
+    public int divide(int pOne, int pTwo) {
         //if (two == 0) return 0;
-        if (two==0) throw new RuntimeException("devided on zero");
-        return one / two;
+        if (pTwo == 0) throw new RuntimeException("devided on zero");
+        return pOne / pTwo;
+    }
+
+    @Override
+    public void clear() {
+        //To do Nothing
     }
 }

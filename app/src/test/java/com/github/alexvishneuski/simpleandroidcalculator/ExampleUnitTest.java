@@ -26,31 +26,31 @@ public class ExampleUnitTest {
 
     @Test
     public void addTest() {
-        float result = mCalculator.add(2, 1);
-        assertEquals(result, 3f);
+        int result = mCalculator.add(2, 1);
+        assertEquals(result, 3);
     }
 
     @Test
     public void difTest() {
-        float result = mCalculator.dif(2, 1);
-        assertEquals(result, 1f);
+        int result = mCalculator.dif(2, 1);
+        assertEquals(result, 1);
     }
 
     @Test
     public void multiplyTest() {
-        float result = mCalculator.multiply(2, 1);
-        assertEquals(result, 2f);
+        int result = mCalculator.multiply(2, 1);
+        assertEquals(result, 2);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void divideTest() {
-        float result = mCalculator.divide(2, 0);
-        assertEquals(result, 2f);
+        int result = mCalculator.divide(2, 1);
+        assertEquals(result, 2);
     }
 
     @Test(expected = RuntimeException.class)
     public void divisionByZeroTest() {
-        float result = mCalculator.divide(2, 0);
+        mCalculator.divide(2, 0);
     }
 
 

@@ -109,7 +109,7 @@ public class CalculatorActivity extends AppCompatActivity {
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.add(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
+                String result = Integer.toString(mCalculator.add(Integer.parseInt(mInputOneEditText.getText().toString()), Integer.parseInt(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
@@ -117,7 +117,7 @@ public class CalculatorActivity extends AppCompatActivity {
         mDifButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.dif(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
+                String result = Integer.toString(mCalculator.dif(Integer.parseInt(mInputOneEditText.getText().toString()), Integer.parseInt(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
@@ -125,7 +125,7 @@ public class CalculatorActivity extends AppCompatActivity {
         mMultiplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.multiply(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
+                String result = Integer.toString(mCalculator.multiply(Integer.parseInt(mInputOneEditText.getText().toString()), Integer.parseInt(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
@@ -133,7 +133,7 @@ public class CalculatorActivity extends AppCompatActivity {
         mDevideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String result = Float.toString(mCalculator.divide(Float.parseFloat(mInputOneEditText.getText().toString()), Float.parseFloat(mInputTwoEditText.getText().toString())));
+                String result = Integer.toString(mCalculator.divide(Integer.parseInt(mInputOneEditText.getText().toString()), Integer.parseInt(mInputTwoEditText.getText().toString())));
                 showResult(result);
             }
         });
