@@ -119,44 +119,6 @@ public class MockitoUnitTest {
         verify(mMockCalculatorFirst, atMost(5)).add(1, 2);
     }
 
-    /*
-    //Verifying exact number of invocations / at least x / never
-
-    @Ignore
-    @Test
-    public void testVerificationInOrder() {
-
-        // A. Single mock whose methods must be invoked in a particular order
-
-        //using a single mock
-        mSpyCalculatorThird.add(1, 2);
-        mSpyCalculatorThird.add(1, 2);
-
-        //create an inOrder verifier for a single mock
-        InOrder inOrder = inOrder(mSpyCalculatorThird);
-
-        //following will make sure that add is first called with "was added first, then with "was added second"
-        inOrder.verify(mSpyCalculatorThird).add(1, 2);
-        inOrder.verify(mSpyCalculatorThird).add(1, 2);
-
-        // B. Multiple mocks that must be used in a particular order
-
-        //using mocks
-        mMockCalculatorFirst.add(1,2);
-        mMockCalculatorSecond.add(1,2);
-
-        //create inOrder object passing any mocks that need to be verified in order
-        InOrder inOrderMultiple = inOrder(mMockCalculatorFirst, mMockCalculatorSecond);
-
-        //following will make sure that firstMock was called before secondMock
-        inOrderMultiple.verify(mMockCalculatorFirst).add(1,2);
-        inOrderMultiple.verify(mMockCalculatorSecond).add(1,2);
-
-    }
-
-*/
-
-
     //Stubbing void methods with exceptions
     @Test(expected = RuntimeException.class)
     public void testVoidWithExceptions() {
