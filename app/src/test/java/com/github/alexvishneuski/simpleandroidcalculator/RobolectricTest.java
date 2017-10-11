@@ -17,8 +17,7 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 
 @RunWith(RobolectricTestRunner.class)
-//@Config(constants = BuildConfig.class, sdk = 21)
-
+@Config(constants = BuildConfig.class, sdk = 26)
 public class RobolectricTest {
 
     private ActivityController<CalculatorActivity> activityController;
@@ -64,7 +63,7 @@ public class RobolectricTest {
 
     @After
     public void destroy() {
-        activityController.pause().stop().destroy();
+//        activityController.pause().stop().destroy();
     }
 
 
