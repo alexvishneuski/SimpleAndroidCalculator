@@ -7,6 +7,8 @@ import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Iterator;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotSame;
 import static org.mockito.Mockito.atLeast;
@@ -191,6 +193,17 @@ public class MockitoUnitTest {
         assertEquals(mMockCalculatorFirst.add(1, 2), 0);
     }
 
+
+    @Test
+    public void testIteratorHelloWorld(){
+        //arrange
+        Iterator i=mock(Iterator.class);
+        when(i.next()).thenReturn("Hello").thenReturn("World");
+        //act
+        String result=i.next()+" "+i.next();
+        //assert
+        assertEquals("Hello World", result);
+    }
     @Ignore
     @Test
     public void testDifMethod() {
