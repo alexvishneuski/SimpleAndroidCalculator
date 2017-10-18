@@ -63,7 +63,7 @@ public class RobolectricTest {
 
     @After
     public void destroy() {
-//        activityController.pause().stop().destroy();
+        activityController.pause().stop().destroy();
     }
 
 
