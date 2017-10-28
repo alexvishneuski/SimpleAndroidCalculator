@@ -3,11 +3,15 @@ package com.github.alexvishneuski.simpleandroidcalculator;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Matchers;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Iterator;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotSame;
@@ -34,6 +38,10 @@ public class MockitoUnitTest {
     private ICalculator mMockCalculatorSecond;
 
     private ICalculator mSpyCalculatorThird;
+
+    @Captor
+    ArgumentCaptor<Integer> argumentCaptor;
+
 
     @Before
     public void setUp() {
@@ -145,7 +153,7 @@ public class MockitoUnitTest {
         verifyZeroInteractions(mMockCalculatorSecond);
     }
 
-    // Spying on real objects
+    // Spying on real objects + argumentCapturing
     @Test
     public void testSpying() {
         //optionally, I can stub out some methods:
@@ -160,16 +168,25 @@ public class MockitoUnitTest {
         //optionally, I can verify
         verify(mSpyCalculatorThird).add(1, 1);
         verify(mSpyCalculatorThird).dif(1, 1);
+
+        //argumentCapturing example
+        verify(mSpyCalculatorThird).dif(argumentCaptor.capture(), argumentCaptor.capture());
+
+        List<Integer> values = argumentCaptor.getAllValues();
+        assertEquals(Integer.valueOf(1), values.get(0));
+        assertEquals(Integer.valueOf(1), values.get(1));
+
     }
 
     //Important gotcha on spying real objects
 
     @Test(expected = RuntimeException.class)
     public void testGotchaSpyWithException() {
-        //Impossible: real method is called so spy.get(0) throws IndexOutOfBoundsException (the list is yet empty)
+        //Impossible: real method is called 1/0 ~ infinity
         when(mSpyCalculatorThird.divide(1, 0)).thenReturn(100);
     }
 
+    //doReturn
     @Test
     public void testGotchaSpy() {
         //I have to use doReturn() for stubbing
